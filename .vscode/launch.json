@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ObserverDemo",
+            "request": "launch",
+            "mainClass": "ObserverDemo",
+            "projectName": "soen6441-design-patterns_f65f842c"
+        }
+    ]
+}
