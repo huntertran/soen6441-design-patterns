@@ -1,0 +1,22 @@
+@startuml factory_pattern
+
+class Client
+
+interface Product
+
+class ConcreteProduct1
+
+class ConcreteProduct2
+
+class Factory {
+    static Product create()
+}
+
+ConcreteProduct1 ..|> Product : implement >
+ConcreteProduct2 ..|> Product : implement >
+
+Client --|> Factory : use >
+
+Factory ..|> Product
+
+@enduml
