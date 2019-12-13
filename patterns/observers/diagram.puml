@@ -1,0 +1,32 @@
+@startuml observers_pattern
+
+class Subject {
+    attach()
+    detach()
+    notify()
+}
+note left: java.util.Observable
+
+class Observer {
+    void update()
+}
+note left: java.util.Observer
+
+class ConcreteObserver {
+    observerState
+    void update()
+}
+note left: View
+
+class ConcreteSubject {
+    subjectState
+    getState()
+}
+note top: Model
+
+Observer <|-- Subject
+ConcreteObserver --|> Observer
+ConcreteObserver --|> ConcreteSubject
+ConcreteSubject --|> Subject
+
+@enduml
