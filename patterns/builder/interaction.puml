@@ -1,0 +1,12 @@
+@startuml builder_sequence
+
+autonumber
+Client --> ConcreteBuilder : newConcreteBuilder
+Client -> Director : new Director(newConcreteBuilder)
+Client -> Director : construct()
+Director -> ConcreteBuilder : buildPartA
+Director -> ConcreteBuilder : buildPartB
+Director -> ConcreteBuilder : buildPartC
+Client -> ConcreteBuilder : getResult()
+
+@enduml
