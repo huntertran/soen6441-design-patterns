@@ -1,0 +1,50 @@
+@startuml builder_pattern
+
+abstract class AbstractBuilder {
+    #product: Product
+    +Product getProduct()
+    +void createNewProduct()
+    abstract void buildPart1()
+    abstract void buildPart2()
+}
+note left: ShelterBuilder
+
+class ConcreteBuilderA {
+    product: Product
+    +void buildPart1()
+    +void buildPart2()
+}
+note left: PolarShelterBuilder
+
+class ConcreteBuilderB {
+    product: Product
+    +void buildPart1()
+    +void buildPart2()
+}
+note left: TropicalShelterBuilder
+
+class Product
+note top: Shelter
+
+class Director {
+    -builder: AbstractBuilder
+    +void setBuilder(builder:AbstractBuilder)
+    +Product getProduct()
+    +void buildProduct()
+}
+note left: Explorer
+
+class Client
+note left: Expedition
+
+hide empty members
+
+Client ..|> Director : use
+AbstractBuilder --* Director
+
+(ConcreteBuilderA, ConcreteBuilderB) --|> AbstractBuilder
+
+ConcreteBuilderA .. ConcreteBuilderB
+(ConcreteBuilderA, ConcreteBuilderB) .. Product
+
+@enduml

@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Expedition",
+            "request": "launch",
+            "mainClass": "Expedition",
+            "projectName": "soen6441-design-patterns_f65f842c"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FactoryDriver",
             "request": "launch",
             "mainClass": "FactoryDriver",
