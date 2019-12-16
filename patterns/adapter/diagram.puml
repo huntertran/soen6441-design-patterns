@@ -1,0 +1,24 @@
+@startuml object_adapter_pattern
+
+class Adaptee {
+    +specificRequest()
+}
+
+class Adapter {
+    +request()
+}
+
+class Target {
+    +request()
+}
+note left: adaptee.specificRequest()
+
+class Client
+
+Adapter --> Adaptee
+Adapter --|> Target
+Client ..> Target
+
+hide empty members
+
+@enduml
