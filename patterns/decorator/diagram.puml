@@ -1,0 +1,64 @@
+@startuml decorator_pattern
+
+abstract class Decorator{
+    #IComponent decoratedComponent
+    +Decorator(IComponent)
+    +basicOperation()
+}
+note right
+basicOperation(){
+    decoratedCoponent.basicOperation();
+}
+end note
+
+class ConcreteDecoratorA{
+    -addedStateA
+    +ConcreteDecoratorA(IComponent)
+    +basicOperation()
+    +addedOperationA()
+}
+note right
+basicOperation() {
+    super.basicOperation()
+    + addedOperationA();
+}
+end note
+
+class ConcreteDecoratorB {
+    -addedStateB
+    +ConcreteDecoratorB(IComponent)
+    +basicOperation()
+    +addedOperationB()
+}
+note right
+basicOperation() {
+    super.basicOperation()
+    + addedOperationB()
+}
+end note
+
+interface IComponent{
+    basicOperation()
+}
+
+class ConcreteComponent {
+    -basicState
+    +basicOperation()
+}
+
+class Client{
+IComponent component = new ConcreteComponent();
+component = new ConcreteDecoratorA(component);
+component = new ConcreteDecoratorB(component);
+component.basicOperation();
+}
+
+Decorator ..|> IComponent : implements >
+(ConcreteDecoratorA,ConcreteDecoratorB) --|> Decorator : extends
+ConcreteComponent ..|> IComponent : implements >
+Client --> IComponent : use
+
+
+hide empty members
+
+@enduml

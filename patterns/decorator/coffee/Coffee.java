@@ -1,6 +1,6 @@
 package coffee;
 
-public abstract class Coffee {
-    public abstract double getCost();
-    public abstract String getIngredients();
+public interface Coffee {
+    double getCost();
+    String getIngredients();
 }

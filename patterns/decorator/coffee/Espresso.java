@@ -1,6 +1,6 @@
 package coffee;
 
-public class Espresso extends Coffee {
+public class Espresso implements Coffee {
     @Override
     public double getCost() {
         return 1.25;
