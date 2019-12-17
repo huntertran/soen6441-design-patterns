@@ -1,0 +1,39 @@
+@startuml strategy_pattern
+
+interface IStrategy {
+    doSomthing(inputs)
+}
+
+class ConcreteStrategyA {
+    +doSomething(inputs)
+}
+note left: doSomething in A way
+
+class ConcreteStrategyB {
+    +doSomething(inputs)
+}
+note left: doSomething in B way
+
+class Context {
+    -IStrategy strategy
+    +void setStrategy(IStrategy)
+    +doSomething(inputs)
+}
+note right
+doSomething(inputs) {
+    strategy.doSomething(inputs);
+}
+end note
+
+class Client {
+    context.setStrategy(new ConcreteStrategyA());
+    context.doSomething(inputs);
+}
+
+(ConcreteStrategyA, ConcreteStrategyB) ..> IStrategy : implements
+Context *.. IStrategy
+Client *.. Context
+
+hide empty members
+
+@enduml
