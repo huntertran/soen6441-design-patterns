@@ -1,0 +1,43 @@
+@startuml class_adapter_pattern
+
+class ClassAdapter{
+    +void requestA()
+    +void requestB()
+}
+note left
+void requestA() {
+    requestB();
+}
+end note
+
+class ObjectA{
+    +void requestA()
+}
+
+interface IObjectA{
+    void requestA()
+}
+
+class ObjectB{
+    +void requestB()
+}
+
+interface IObjectB{
+    void requestA()
+}
+
+class Client{
+    ObjectA objectA
+}
+note left: objectA.requestA();
+
+ObjectA ..> IObjectA
+ObjectB ..> IObjectB
+
+(IObjectA,IObjectB) ..> ClassAdapter
+
+Client --> ClassAdapter
+
+hide empty members
+
+@enduml
