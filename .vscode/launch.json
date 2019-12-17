@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ClassAdapterDriver",
+            "request": "launch",
+            "mainClass": "classes.ClassAdapterDriver",
+            "projectName": "soen6441-design-patterns_11aa003e"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - AdapterDriver",
+            "request": "launch",
+            "mainClass": "object.AdapterDriver",
+            "projectName": "soen6441-design-patterns_11aa003e"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - AdapterDriver",
             "request": "launch",
             "mainClass": "AdapterDriver",
