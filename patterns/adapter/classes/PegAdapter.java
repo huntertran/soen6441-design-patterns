@@ -15,13 +15,13 @@ public class PegAdapter implements ISquarePeg, IRoundPeg {
 
     @Override
     public void insertIntoRoundHole(String message) {
-        roundPeg.insertIntoRoundHole(message);
+        squarePeg.insertIntoSquareHole(message);
 
     }
 
     @Override
     public void insertIntoSquareHole(String message) {
-        squarePeg.insertIntoSquareHole(message);
+        roundPeg.insertIntoRoundHole(message);
     }
 
 }

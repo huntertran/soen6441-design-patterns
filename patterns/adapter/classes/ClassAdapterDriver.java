@@ -10,5 +10,8 @@ public class ClassAdapterDriver {
 
         ISquarePeg wannaBeRound = new PegAdapter(roundPeg);
         wannaBeRound.insertIntoSquareHole("called from squarePeg");
+
+        IRoundPeg wannaBeSquare = new PegAdapter(squarePeg);
+        wannaBeSquare.insertIntoRoundHole("called from round peg");
     }
 }
