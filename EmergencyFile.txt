@@ -1,0 +1,6 @@
+STARTING BOILER CONTROLLER
+2019-12-18 13:47:00:class custom.OverloadPressureException:103
+Engaging shutdown procedure.
+2019-12-18 13:47:00:class custom.StuckValveException:stuck
+Evacuation!!
+BOILER CONTROLLER SHUT DOWN

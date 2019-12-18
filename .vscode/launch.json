@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BoilerDriver",
+            "request": "launch",
+            "mainClass": "BoilerDriver",
+            "projectName": "soen6441-design-patterns_f65f842c"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - StrategyDriver",
             "request": "launch",
             "mainClass": "StrategyDriver",
